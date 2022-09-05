@@ -26,6 +26,7 @@
                 <input type="text" class="form-control" name="sex"placeholder="Enter your password">
             </div>
             <button type="submit" class="btn btn-primary m-5" name="submit">Submit</button>
+            <button type="cancel" class="btn btn-primary m-5" name="cancel">Cancel</button>
         </form>
 
     </div>

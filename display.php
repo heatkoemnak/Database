@@ -1,5 +1,18 @@
 <?php
 include 'connection.php';
+
+if(isset($_GET['id'])){
+    $id=$_GET['id'];
+    $sql = "DELETE FROM data_insert WHERE id= $id";
+    $result=mysqli_query($conn,$sql);
+
+    if($result){
+        header("location:display.php");
+    }
+    else{
+        die();
+    }
+}
 ?>
 <html lang="en">
 <head>
@@ -30,8 +43,9 @@ if(isset($_POST['submit'])){
     }
     //if if the result is connected no need to show (whites page)
 }
-?>
 
+
+?>
     
 <body>
         
@@ -76,11 +90,12 @@ if(isset($_POST['submit'])){
                                 <td>
 
                                 <button class='btn btn-primary btn-sm'>
-                                <a href='edit.php' class='text-light'>Update<a/></button>
+                                <a href='update.php' class='text-light'>Update<a/></button>
                                 <button class='btn btn-primary btn-sm'>
-                                <a href='edit.php' class='text-light'>Delete<a/></button>
+                                <a href='?id=$row[id]' class='text-light'>Delete<a/></button>
                                 
                                 </td>
+                                
                             </tr>";
                     }
                     
