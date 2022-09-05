@@ -78,7 +78,7 @@ if(isset($_POST['submit'])){
                                 <button class='btn btn-primary btn-sm'>
                                 <a href='edit.php' class='text-light'>Update<a/></button>
                                 <button class='btn btn-primary btn-sm'>
-                                <a href='edit.php' class='text-light'>Update<a/></button>
+                                <a href='edit.php' class='text-light'>Delete<a/></button>
                                 
                                 </td>
                             </tr>";
