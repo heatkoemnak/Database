@@ -39,7 +39,7 @@ if(isset($_POST['submit'])){
         <div class="add-user m-5">
         
         <button type="button" class="btn btn-primary">
-        <a href ="user.php" class="text-light" text-decoration:none>Add User</button>
+        <a href ="user_data.php" class="text-light" text-decoration:none>Add User</button>
 
         </div>
         <table class="table">
