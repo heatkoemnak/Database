@@ -20,7 +20,6 @@ if(isset($_POST['submit'])){
     //if if the result is connected no need to show (whites page)
 }
 ?>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -38,11 +37,11 @@ if(isset($_POST['submit'])){
         
     <div class="contianer m-5">
         <div class="add-user m-5">
+        
         <button type="button" class="btn btn-primary">
-        <a href ="user.php">Add User</button>
+        <a href ="user.php" class="text-light" text-decoration:none>Add User</button>
 
         </div>
-        
         <table class="table">
             <thead class="thead-dark">
                 <tr>
@@ -75,6 +74,9 @@ if(isset($_POST['submit'])){
                                 <button>Update</button>
                                 <button>Delete</button>
                                 </td> 
+                                
+                                
+        
                             </tr>";
                             
                             
@@ -83,9 +85,14 @@ if(isset($_POST['submit'])){
 
                     }
                 ?>
+                
 
             </tbody>
+
+    
+        
         </table>
+    
     </div>
 
     
