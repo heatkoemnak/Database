@@ -25,7 +25,7 @@
                 <label>Gender</label>
                 <input type="text" class="form-control" name="sex"placeholder="Enter your password">
             </div>
-            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+            <button type="submit" class="btn btn-primary m-5" name="submit">Submit</button>
         </form>
 
     </div>

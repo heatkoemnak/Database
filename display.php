@@ -1,6 +1,17 @@
 <?php
 include 'connection.php';
 ?>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    
+</head>
+
+</html>
 <?php
 //insert the data in the database
 if(isset($_POST['submit'])){
@@ -14,23 +25,12 @@ if(isset($_POST['submit'])){
     if(!$result){//if the result is not connected
 
         //show me something wrong in line
-        die(mysql_error($conn));
+        die("connection failed".$conn->$connect_error);
         
     }
     //if if the result is connected no need to show (whites page)
 }
 ?>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
-    
-</head>
-
-</html>
 
     
 <body>
@@ -39,7 +39,7 @@ if(isset($_POST['submit'])){
         <div class="add-user m-5">
         
         <button type="button" class="btn btn-primary">
-        <a href ="user_data.php" class="text-light" text-decoration:none>Add User</button>
+        <a href ="user_data.php" class="text-light">Add User</button>
 
         </div>
         <table class="table">
@@ -57,33 +57,33 @@ if(isset($_POST['submit'])){
                 <?php 
                 //select data from rows
                     $sql="Select * from `data_insert`";
-                    $select=mysqli_query($conn,$sql);
-                    $row=mysqli_num_rows($select);
+                    $result=mysqli_query($conn,$sql);
+                    
                     //if rows has selected
-                    if($row){
-                        while($result=mysqli_fetch_assoc($select)){
+                    if(!$result){
+                        die("connection failed".$conn->$connect_error);
+                    }
+                    //read data from rows
+                    while($row=$result->fetch_assoc()){
                             //print to the table on web page as result
                             echo "
                             <tr>
-                                <td> ".$result['id']."</td>
-                                <td>".$result['name']."</td>
-                                <td>".$result['email']."</td>
-                                <td>".$result['mobile']."</td>
-                                <td>".$result['Gender']."</td>
+                                <td>$row[id]</td>
+                                <td>$row[name]</td>
+                                <td>$row[email]</td>
+                                <td>$row[mobile]</td>
+                                <td>$row[Gender]</td>
                                 <td>
-                                <button>Update</button>
-                                <button>Delete</button>
-                                </td> 
-                                
-                                
-        
-                            </tr>";
-                            
-                            
-                        }
-                        
 
+                                <button class='btn btn-primary btn-sm'>
+                                <a href='edit.php' class='text-light'>Update<a/></button>
+                                <button class='btn btn-primary btn-sm'>
+                                <a href='edit.php' class='text-light'>Update<a/></button>
+                                
+                                </td>
+                            </tr>";
                     }
+                    
                 ?>
                 
 
