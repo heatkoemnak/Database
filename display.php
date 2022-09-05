@@ -1,6 +1,6 @@
 <?php
 include 'connection.php';
-
+//delete database
 if(isset($_GET['id'])){
     $id=$_GET['id'];
     $sql = "DELETE FROM data_insert WHERE id= $id";
