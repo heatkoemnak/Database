@@ -11,7 +11,6 @@ include 'connection.php';
 <?php
 if(isset($_GET['id'])){
     $id=$_GET['id'];
-    
     $sql="UPDATE `data_insert` SET `id`='$id',`name`='$name',`email`='$email',`mobile`=' $mobile',`Gender`='$sex'' WHERE 1
     $result=mysqli_query($conn,$sql);
     
