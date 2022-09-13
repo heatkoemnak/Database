@@ -38,8 +38,8 @@ if(isset($_POST['submit'])){
     if(!$result){//if the result is not connected
 
         //show me something wrong in line
-        die("connection failed".$conn->$connect_error);
-        
+        die('Could not select database: ' . mysqli_error($conn));
+        // mysqli_error($conn)
     }
     //if if the result is connected no need to show (whites page)
 }
@@ -75,7 +75,7 @@ if(isset($_POST['submit'])){
                     
                     //if rows has selected
                     if(!$result){
-                        die("connection failed".$conn->$connect_error);
+                        die('Could not select database: ' . mysqli_error($conn));
                     }
                     //read data from rows
                     while($row=$result->fetch_assoc()){
@@ -87,6 +87,7 @@ if(isset($_POST['submit'])){
                                 <td>$row[email]</td>
                                 <td>$row[mobile]</td>
                                 <td>$row[Gender]</td>
+                                
                                 <td>
 
                                 <button class='btn btn-primary btn-sm'>
