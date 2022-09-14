@@ -1,7 +1,7 @@
 # Database
 #user_data.php<br>
 Form for user input the data
-![image](https://user-images.githubusercontent.com/100059828/188374150-b4ce1288-2011-4bd1-b3a6-b6b66d5912ca.png)
+![image](https://user-images.githubusercontent.com/100059828/190202885-89a4e7d5-bc57-4247-bee9-4c13b9bc9cac.png)
 #display.php<br>
 This is the data that we got from the user input
 
